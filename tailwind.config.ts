@@ -20,6 +20,14 @@ export default {
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
+			lightgray: "#525D73",
+			header: "#02983E",
+			darkgray: "#334155",
+			softgray: "#404A60",
+			hline: "#858D9D",
+			cardbg: "#FAFAFA",
+			ipline: "#667085",
+			graph: "#FAFAFA",
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'

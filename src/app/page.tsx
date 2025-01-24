@@ -1,30 +1,53 @@
 "use client";
 
 import React, { useState } from "react";
-import { ReactFlow } from "@xyflow/react";
-
-import "@xyflow/react/dist/style.css";
-import { Button } from "@/components/ui/button";
-
-const initialNodes = [
-  { id: "1", position: { x: 100, y: 100 }, data: { label: "1" } },
-  { id: "2", position: { x: 200, y: 200 }, data: { label: "2" } },
-];
-const initialEdges = [{ id: "e1-2", source: "1", target: "2" }];
+import SideBar from "@/components/ui/sidebar";
+import Description from "@/components/ui/description";
+import Home from "@/components/ui/home";
 
 export default function HomePage() {
-  const [count, setCount] = useState(0);
+  const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
+
+  const toggleMobileSidebar = () => setIsMobileSidebarOpen(!isMobileSidebarOpen);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b">
-      <h1 className="p-4 text-2xl font-bold">Your Code should be here</h1>
-      <div className="flex flex-col items-center justify-center">
-        <p>count is: {count}</p>
-        <Button onClick={() => setCount(count + 1)}>Click me</Button>
+    <div className="flex min-h-screen gap-8 bg-gray-100">
+      {/* Sidebar */}
+      <div className="md:block fixed top-4 left-4 z-50 md:relative md:top-0 md:left-0">
+        {/* Hamburger Button for Mobile */}
+        <button
+          className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center md:hidden"
+          onClick={toggleMobileSidebar}
+        >
+          <img src="/hamburger-icon.svg" alt="Menu" />
+        </button>
+
+        {/* Sidebar for Mobile and Desktop */}
+        <div
+          className={`fixed top-0 left-0 h-full bg-white shadow-md transition-transform duration-300 md:static md:translate-x-0 ${
+            isMobileSidebarOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
+        >
+          <SideBar />
+        </div>
+
+        {/* Overlay for Mobile Sidebar */}
+        {isMobileSidebarOpen && (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+            onClick={toggleMobileSidebar}
+          ></div>
+        )}
       </div>
-      <div style={{ width: "50vw", height: "50vh" }}>
-        <ReactFlow nodes={initialNodes} edges={initialEdges} />
+
+      {/* Main Content */}
+      <div className="flex-1 flex flex-col gap-4 md:flex-row">
+        {/* Description Section */}
+        <Description />
+
+        {/* Home Section */}
+        <Home />
       </div>
-    </main>
+    </div>
   );
 }
