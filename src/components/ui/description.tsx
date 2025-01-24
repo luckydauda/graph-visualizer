@@ -1,16 +1,8 @@
+import { useTableDataStore } from "@/stores/descriptionTableStores";
 import ServerCard from "./serverCard";
 
 export default function Description() {
-
-    const tableData = [
-        { id: 1, label: "Lorem Ipsum Dolor", value: "10/19/2017" },
-        { id: 2, label: "Lorem Ipsum Dolor", value: "Ut" },
-        { id: 3, label: "Lorem Ipsum Dolor", value: "Eros" },
-        { id: 4, label: "Lorem Ipsum Dolor", value: "✔ Yes" },
-        { id: 5, label: "Lorem Ipsum Dolor", value: "Sit" },
-        { id: 6, label: "Lorem Ipsum Dolor", value: "Lorem Ipsum Dolor" },
-        { id: 7, label: "Lorem Ipsum Dolor Sit", value: "Lorem P" },
-      ];
+    const tableData = useTableDataStore((state) => state.tableData);
   return (
     <section className="mt-5 flex max-h-[calc(100vh-50px)] w-96 flex-col gap-6 overflow-y-auto rounded-[25px] bg-white p-4 shadow">
       {/* Description Header */}

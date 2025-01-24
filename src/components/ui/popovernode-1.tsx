@@ -1,5 +1,7 @@
+import { useGridDataStore } from "@/stores/gridDataStores";
+
 export default function PopoverNode1() {
-  const gridData = ["1.2.3.4", "1.2.3.4", "1.2.3.4", "1.2.3.4", "1.2.3.4", "1.2.3.4"];
+  const gridData = useGridDataStore((state) => state.gridData);
     return (
 
         <div className=" w-full">
