@@ -5,7 +5,7 @@ export default function SideBar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false); // Mobile open state
 
   const toggleCollapse = () => setIsCollapsed(!isCollapsed); // Toggle collapse
-  const toggleMobile = () => setIsMobileOpen(!isMobileOpen);
+  
 
   return (
     <aside

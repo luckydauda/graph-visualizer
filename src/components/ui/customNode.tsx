@@ -13,6 +13,7 @@ import {
   getBezierPath,
   Node,
   Edge,
+  Connection
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 import {
@@ -38,7 +39,11 @@ type CustomNodeData = {
   id: string;
 };
 
-type CustomEdgeData = Edge;
+type CustomEdgeData = Edge & {
+  // Add your custom properties here
+  customProperty?: string;
+};
+
 
 type GraphState = {
   nodes: Node<CustomNodeData>[];
@@ -213,10 +218,6 @@ const useGraphStore = create<GraphState>((set) => ({
 export default function CustomGraph() {
   const { nodes, edges, setEdges } = useGraphStore();
 
-  const onConnect = useCallback(
-    (params: any) => setEdges((eds) => addEdge(params, eds)),
-    [setEdges],
-  );
 
   return (
     <div className="h-[300px] w-full rounded bg-graph p-4 sm:mx-auto sm:w-[90%] sm:p-4 md:w-full md:p-8">
@@ -227,7 +228,7 @@ export default function CustomGraph() {
         nodes={nodes}
         edges={edges}
         nodeTypes={{ customNode: CustomNode }}
-        onConnect={onConnect}
+        // onConnect={onConnect}
         nodesDraggable={false} // Disable node dragging
         panOnDrag={false} // Disable canvas panning
         zoomOnScroll={false} // Disable zoom on scroll
