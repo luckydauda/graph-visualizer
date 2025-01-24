@@ -37,7 +37,7 @@ const ServerCard: React.FC<ServerCardProps> = ({
         </div>
          {/* Vertical Line */}
          <div className="w-px h-15 bg-hline mx-4"></div>
-        {/* Title */}
+       
         <div className="flex flex-col gap-1">
         <div className="text-[13px] font-500 text-gray-500">{title}</div>
         <div className="text-[13px] font-500 text-gray-500">{subDescription}</div>
