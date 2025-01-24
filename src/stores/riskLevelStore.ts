@@ -13,7 +13,7 @@ interface RiskLevelStore {
 export const useRiskLevelStore = create<RiskLevelStore>((set) => ({
   riskLevels: [
     { id: 1, count: 2, label: "Critical", color: "bg-red-500" },
-    { id: 2, count: 0, label: "High", color: "bg-orange-500" },
+    { id: 2, count: 0, label: "High", color: "" },
     { id: 3, count: 0, label: "Medium", color: "bg-yellow-500" },
     { id: 4, count: 0, label: "Low", color: "bg-green-500" },
   ],
