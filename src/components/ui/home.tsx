@@ -2,6 +2,7 @@ import ContextualRisk from "./contextTualRisk";
 import CustomGraph from "./customNode";
 import RiskTable from "./riskTable";
 
+
 export default function Home() {
   return (
     <main className="flex-1 md:p-6">
