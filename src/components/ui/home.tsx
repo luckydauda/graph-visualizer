@@ -1,6 +1,6 @@
 import ContextualRisk from "./contextTualRisk";
 import CustomGraph from "./customNode";
-import RiskTable from "./riskTable";
+
 
 
 export default function Home() {
