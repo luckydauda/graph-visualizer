@@ -19,7 +19,7 @@ const RiskTable = () => {
   ];
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-4 w-full h-[260px]">
+    <div className="bg-white rounded-lg shadow-md p-4 w-full ">
       <table className="w-full table-auto border-collapse">
         <thead>
           <tr>

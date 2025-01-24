@@ -7,7 +7,7 @@ const ContextualRisk = () => {
  
 
   return (
-    <div className="h-[260px] w-full rounded-lg bg-white p-6 shadow-md">
+    <div className=" w-full rounded-lg bg-white p-6 shadow-md">
       {/* Title */}
       <h2 className="mb-4 text-sm font-medium text-gray-500">
         Contextual Risk
