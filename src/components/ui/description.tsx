@@ -4,7 +4,8 @@ import ServerCard from "./serverCard";
 export default function Description() {
     const tableData = useTableDataStore((state) => state.tableData);
   return (
-    <section className="mt-5 flex max-h-[calc(100vh-50px)] w-96 flex-col gap-6 overflow-y-auto rounded-[25px] bg-white p-4 shadow thin-scrollbar">
+    <section className="mt-5 flex max-h-[calc(100vh-50px)] flex-col gap-6 overflow-y-auto rounded-[25px] bg-white p-4 shadow thin-scrollbar sm:flex-1 sm:w-auto md:w-96 md:!flex-none"
+    >
       {/* Description Header */}
       <div>
         <h2 className="mb-2 text-lg font-semibold text-header">Description</h2>
