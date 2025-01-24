@@ -2,16 +2,14 @@ import { useState } from "react";
 
 export default function SideBar() {
   const [isCollapsed, setIsCollapsed] = useState(false); // Collapsed state
-  
 
   const toggleCollapse = () => setIsCollapsed(!isCollapsed); // Toggle collapse
-  
 
   return (
     <aside
-      className={`relative flex h-screen flex-col justify-between border-r border-gray-200 bg-white p-4 ${
+      className={`relative flex flex-col justify-between border-r border-gray-200 bg-white p-4 ${
         isCollapsed ? "w-20" : "w-64"
-      }`}
+      } min-h-screen`} // Ensure full height on all screen sizes
     >
       {/* Top Section */}
       <div>
@@ -23,22 +21,18 @@ export default function SideBar() {
             {isCollapsed && <img src="/aestelia.svg" className="w-40" />}
           </div>
           {isCollapsed && <img src="/aestelia.svg" className="w-40" />}
-
-          {/* <button className="w-8 h-8 rounded-full  flex items-center justify-center absolute right-0 ">
-            <img src="/collapser.svg" className="ml-[30px]"/>
-            </button> */}
           <button
-            onClick={toggleCollapse}
-            className="flex h-8 w-8 items-center justify-center rounded-full"
-          >
-            <img
-              src="/collapser.svg"
-              className={`transition-transform ${
-                isCollapsed ? "ml-[20px] rotate-180" : "ml-[60px] rotate-0"
-              }`}
-              alt="Collapse"
-            />
-          </button>
+  onClick={toggleCollapse}
+  className="hidden md:flex h-8 w-8 items-center justify-center rounded-full"
+>
+  <img
+    src="/collapser.svg"
+    className={`transition-transform ${
+      isCollapsed ? "ml-[20px] rotate-180" : "ml-[60px] rotate-0"
+    }`}
+    alt="Collapse"
+  />
+</button>
         </div>
 
         {/* Navigation */}
@@ -84,14 +78,16 @@ export default function SideBar() {
         {/* Profile */}
         <div className="flex items-center justify-between rounded-md px-3 py-2 text-gray-700">
           <div className="flex items-center gap-2">
-            <img src="/avatar.svg" />
+            <img src="/footer-logo.svg" />
             <div>
               {!isCollapsed && <p className="text-sm text-lightgray">Lorem</p>}
               {!isCollapsed && <p className="text-sm text-lightgray">Lorem</p>}
             </div>
           </div>
           <img src="/log-out.svg" />
+         
         </div>
+        
       </div>
     </aside>
   );
