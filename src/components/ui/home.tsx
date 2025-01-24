@@ -10,7 +10,7 @@ export default function Home() {
         <p className="text-left font-semibold text-header">Lorem Lorem Loremh</p>
         
         {/* Graph Section */}
-        <div className="w-full flex-1 rounded-lg bg-graph p-4 md:p-8 overflow-auto">
+        <div className="w-full flex-1 rounded-lg bg-graph p-4 md:p-4 overflow-auto">
           <CustomGraph />
         </div>
 
