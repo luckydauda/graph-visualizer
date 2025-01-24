@@ -16,6 +16,7 @@ const ArrowHandle: React.FC<ArrowHandleProps> = ({ arrowType }) => {
         border: "none",
         width: "100%",
         height: "24px",
+        zIndex: 1111111,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",

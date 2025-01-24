@@ -220,7 +220,7 @@ export default function CustomGraph() {
 
 
   return (
-    <div className="h-[300px] w-full rounded bg-graph p-4 sm:mx-auto sm:w-[90%] sm:p-4 md:w-full md:p-8">
+    <div className="h-[300px] w-full rounded bg-graph sm:mx-auto sm:w-[90%] sm:p-4 md:w-full md:p-8">
       {/* Include SVG Arrowhead Definitions */}
       {/* {arrowHeadMarker} */}
 

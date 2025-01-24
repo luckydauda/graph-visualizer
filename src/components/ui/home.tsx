@@ -11,7 +11,7 @@ export default function Home() {
           Lorem Lorem Loremh
         </p>
         {/* Graph Section */}
-        <div className="w-full rounded-lg bg-graph p-4 md:p-8">
+        <div className="w-full flex-1 rounded-lg bg-graph md:p-8">
           <CustomGraph />
         </div>
 
