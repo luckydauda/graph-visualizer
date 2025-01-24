@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function SideBar() {
   const [isCollapsed, setIsCollapsed] = useState(false); // Collapsed state
-  const [isMobileOpen, setIsMobileOpen] = useState(false); // Mobile open state
+  
 
   const toggleCollapse = () => setIsCollapsed(!isCollapsed); // Toggle collapse
   
