@@ -18,11 +18,11 @@ export default function SideBar() {
         {/* Logo */}
         <div className="mb-8 flex items-center justify-between">
           <div className="flex flex-row items-center gap-2 pl-2.5">
-            {!isCollapsed && <img src="/aestelia.svg" />}
+            {!isCollapsed && <ImageWithDefaults src="/aestelia.svg" alt="image" width={50} height={50}/>}
             {!isCollapsed && <h2 className="text-2xl font-medium">Astelia</h2>}
             {/* {isCollapsed && <img src="/aestelia.svg"  />} */}
           </div>
-          {isCollapsed && <img src="/aestelia.svg" />}
+          {isCollapsed && <ImageWithDefaults src="/aestelia.svg"width={30} height={30} alt="image"/>}
           <button
         onClick={toggleCollapse}
       className="hidden md:flex h-8 w-8 items-center justify-center rounded-full"
@@ -32,7 +32,7 @@ export default function SideBar() {
     className={`transition-transform duration-300 ${
       isCollapsed ? "ml-[20px] rotate-180" : "ml-[60px] rotate-0"
     }`}
-    width={40} height={40}
+    width={30} height={30}
     alt="Collapse"
   />
 </button>

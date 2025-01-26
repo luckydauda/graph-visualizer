@@ -21,7 +21,12 @@ const config = {
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/consistent-type-imports": "off",
    
-   
+    "import/no-unresolved": [
+      "error",
+      {
+        caseSensitive: true
+      }
+    ],
     // "@typescript-eslint/no-unused-vars": [
     //   "warn",
     //   {
