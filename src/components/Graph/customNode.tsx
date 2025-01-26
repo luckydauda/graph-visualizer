@@ -3,17 +3,10 @@
 import React, { useState } from "react";
 import {
   ReactFlow,
-  Background,
-  Controls,
-  useNodesState,
-  useEdgesState,
-  Handle,
-  addEdge,
-  Position,
-  getBezierPath,
+ 
   Node,
   Edge,
-  Connection
+ 
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 import {
@@ -21,7 +14,7 @@ import {
   PopoverTrigger,
   PopoverContent,
 } from "@/components/ui/shadcn/popover"; // Adjust this import based on your popover library
-import { useCallback } from "react";
+
 import PopoverNode1 from "./popovernode-1";
 import PopoverNode2 from "./popovernode-2";
 import PopoverNode3 from "./popovernode-3";

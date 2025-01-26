@@ -27,11 +27,12 @@ export default function SideBar() {
         onClick={toggleCollapse}
       className="hidden md:flex h-8 w-8 items-center justify-center rounded-full"
 >
-  <img
+  <ImageWithDefaults
     src="/collapser.svg"
     className={`transition-transform duration-300 ${
       isCollapsed ? "ml-[20px] rotate-180" : "ml-[60px] rotate-0"
     }`}
+    width={40} height={40}
     alt="Collapse"
   />
 </button>
