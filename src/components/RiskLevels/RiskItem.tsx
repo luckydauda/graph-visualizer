@@ -11,13 +11,15 @@ const colorMap: Record<"critical" | "high" | "medium" | "low", string> = {
   low: "bg-green-500",
 };
 
+
 interface RiskItemProps {
   level: RiskLevel;
 }
 
 const RiskItem: React.FC<RiskItemProps> = ({ level }) => {
   // Ensure case-insensitivity and fallback
-  const colorClass = colorMap[level.label.toLowerCase() as keyof typeof colorMap] || "bg-gray-500";
+  const colorClass = colorMap[level.label.toLowerCase() as keyof typeof colorMap] ?? "bg-gray-500";
+
 
   return (
     <li className="flex items-center space-x-2">
