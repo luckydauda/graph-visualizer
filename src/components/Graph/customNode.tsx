@@ -20,13 +20,14 @@ import {
   Popover,
   PopoverTrigger,
   PopoverContent,
-} from "@/components/ui/popover"; // Adjust this import based on your popover library
+} from "@/components/ui/shadcn/popover"; // Adjust this import based on your popover library
 import { useCallback } from "react";
 import PopoverNode1 from "./popovernode-1";
 import PopoverNode2 from "./popovernode-2";
 import PopoverNode3 from "./popovernode-3";
 import { create } from "zustand";
 import ArrowHandle from "./arrowHandle";
+import ImageWithDefaults from "@/components/ui/ImageWithDefaults";;
 
 // Define types for nodes and edges
 type CustomNodeData = {
@@ -67,20 +68,23 @@ const CustomNode = ({ data }: any) => {
           </div>
 
           {/* Node Content */}
-          <img
+          <ImageWithDefaults
             src={data.icon}
             alt="Node Icon"
+            width={45}
+            height={45}
             // className="sm:w-6 sm:h-6"
           />
           <p className="text-[10px] text-lightgray sm:text-xs">{data.label}</p>
           {data.ip && (
-            <p className="text-center text-[8px] text-ipline sm:text-[10px]">
+            <p className="text-center text-[10px] text-ipline sm:text-[10px] md:text-[10px]">
               {data.ip}
             </p>
           )}
         </div>
       </PopoverTrigger>
-      <PopoverContent className="rounded-md bg-white p-4 shadow-lg">
+      <PopoverContent  className="rounded-[25px]  bg-white p-4 shadow-b-sm w-full" 
+       style={{ transform: "translateY(10px)" }}>
       {(() => {
     switch (data?.id) {
       case "1":
@@ -220,10 +224,7 @@ export default function CustomGraph() {
 
 
   return (
-    <div className="h-[300px] w-full rounded bg-graph sm:mx-auto sm:w-[90%] sm:p-4 md:w-full md:p-8">
-    
-    
-
+    <div className="h-[380px] flex-col flex w-full rounded bg-graph sm:mx-auto sm:w-[90%] sm:p-4 md:w-full md:p-8">
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -241,17 +242,17 @@ export default function CustomGraph() {
       </ReactFlow>
 
       {/* Legend Section */}
-      <div className="mt-[-40px] flex flex-col gap-4 sm:mt-4">
-        <div className="w-full border-b" />
+      <div className="md:mt-0 flex flex-col gap-4 sm:mt-[-100px]">
+        <div className="w-full border-b border-gray-300" />
         <div className="flex flex-wrap items-center gap-4 space-x-0 rounded-lg sm:flex-nowrap sm:space-x-6">
           {/* Red Item */}
           <div className="mb-2 flex items-center space-x-2 sm:mb-0">
-            <img
+            <ImageWithDefaults
               src="./lorem-red.svg"
               alt="Red Icon"
-              className="h-3 w-3 sm:h-6 sm:w-6" // Smaller size for mobile
+              className="h-3 w-3 sm:h-6 sm:w-6 md:w-8 md:h-8" // Smaller size for mobile
             />
-            <p className="text-[10px] font-bold text-red-500 sm:text-sm">
+            <p className="text-[14px] font-bold text-red-500 sm:text-[16px]">
               Lorem
             </p>{" "}
             {/* Smaller text for mobile */}
@@ -259,12 +260,12 @@ export default function CustomGraph() {
 
           {/* Orange Item */}
           <div className="mb-2 flex items-center space-x-2 sm:mb-0">
-            <img
+            <ImageWithDefaults
               src="./lorem-yellow.svg"
               alt="Yellow Icon"
-              className="h-3 w-3 sm:h-6 sm:w-6" // Smaller size for mobile
+              className="h-3 w-3 sm:h-6 sm:w-6 md:w-8 md:h-8" // Smaller size for mobile
             />
-            <p className="text-[10px] font-bold text-yellow-500 sm:text-sm">
+            <p className="text-[14px] font-bold text-yellow-500 sm:text-[16px]">
               Lorem
             </p>{" "}
             {/* Smaller text for mobile */}
@@ -272,12 +273,12 @@ export default function CustomGraph() {
 
           {/* Green Item */}
           <div className="mb-2 flex items-center space-x-2 sm:mb-0">
-            <img
+            <ImageWithDefaults
               src="./lorem-green.svg"
               alt="Green Icon"
-              className="h-3 w-3 sm:h-6 sm:w-6" // Smaller size for mobile
+              className="h-3 w-3 sm:h-6 sm:w-6 md:w-8 md:h-8" // Smaller size for mobile
             />
-            <p className="text-[10px] font-bold text-green-500 sm:text-sm">
+            <p className="text-[14px] font-bold text-green-500 sm:text-[16px]">
               Lorem
             </p>{" "}
             {/* Smaller text for mobile */}

@@ -2,14 +2,16 @@ import { useTableDataStore } from "@/stores/descriptionTableStores";
 import ServerCard from "./serverCard";
 
 export default function Description() {
-    const tableData = useTableDataStore((state) => state.tableData);
+  const tableData = useTableDataStore((state) => state.tableData);
+
   return (
-    <section className="mt-5 flex max-h-[calc(100vh-50px)] flex-col gap-6 overflow-y-auto rounded-[25px] bg-white p-4 shadow thin-scrollbar sm:flex-1 sm:w-auto md:w-96 md:!flex-none"
-    >
+    <section className="mt-7 flex max-h-[calc(100vh-50px)] flex-col gap-sectionGap overflow-y-auto rounded-card bg-cardBackground p-cardPadding shadow-card thin-scrollbar sm:flex-1 sm:w-auto md:w-96 md:px-5 md:!flex-none">
       {/* Description Header */}
       <div>
-        <h2 className="mb-2 text-lg font-semibold text-header">Description</h2>
-        <p className="text-[13px] leading-[2] leading-relaxed text-gray-500">
+        <h2 className="mb-2 text-header font-semibold text-headerlarge">
+          Description
+        </h2>
+        <p className="text-small leading-doubled font-400 leading-relaxed text-mediumgray">
           Lorem Ipsum Dolor Sit Amet Consectetur. Aenean Sodales Pellentesque
           Gravida Nibh Et Magna Faucibus. Dui Commodo Ut Metus Amet Egestas
           Habitant Viverra. Quisque Fusce Senectus Facilisis Non Diam Leo Nulla
@@ -20,8 +22,10 @@ export default function Description() {
 
       {/* Extra Section */}
       <div>
-        <h3 className="mb-2 text-lg font-semibold text-header">Extra</h3>
-        <p className="text-[13px] leading-[2] text-gray-500">
+        <h3 className="mb-2 text-header font-semibold text-headerlarge">
+          Extra
+        </h3>
+        <p className="text-small leading-doubled font-400 text-mediumgray">
           Lorem ipsum dolor sit amet consectetur. Tempus a id adipiscing fames
           egestas tellus duis pretium tempus. Justo nisi nisl lorem lectus id
           ornare. Rhoncus in egestas in amet porttitor pellentesque sit. Amet
@@ -35,26 +39,27 @@ export default function Description() {
       </div>
 
       {/* Table Section */}
-      <table className="w-full table-auto border-collapse text-gray-600">
-  <tbody>
-    <tr className="border-b" />
+      <table className="w-full table-auto border-collapse text-tableHeader">
+        <tbody>
+          <tr className="border-b" />
+          {tableData.map((row) => (
+            <tr key={row.id}>
+              <td className="p-tablePadding font-semibold text-tableHeader">
+                {row.label}
+              </td>
+              <td className="p-tablePadding text-tableData">{row.value}</td>
+            </tr>
+          ))}
+          <tr className="border-b border-text-mediumgray" />
+        </tbody>
+      </table>
 
-    {tableData.map((row) => (
-      <tr key={row.id}>
-        <td className="p-2 text-base font-semibold text-gray-600">{row.label}</td>
-        <td className="p-2 text-base text-gray-500">{row.value}</td>
-      </tr>
-    ))}
-
-    <tr className="border-b" />
-  </tbody>
-</table>
-
+      {/* Server Cards */}
       <div>
-        <p className="p-2 text-base font-bold text-gray-600">
+        <p className="p-tablePadding font-semibold text-tableHeader">
           Lorem Ipsum Dolor Sit
         </p>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-sectionGap">
           <ServerCard
             title="Lorem Ipsum Dolor Sit."
             description="Lorem Ipsum Dolor Sit Amet Consectetur."

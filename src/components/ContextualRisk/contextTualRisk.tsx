@@ -1,20 +1,20 @@
 "use client";
 
 import React from "react";
-import RiskLevelsComponent from "./RiskLevels/RiskLevelsCmponent";
+import RiskLevelsComponent from "../RiskLevels/RiskLevelsCmponent";
 
 const ContextualRisk = () => {
  
 
   return (
-    <div className=" w-full rounded-lg bg-white p-6 shadow-md">
+    <div className=" w-full rounded-lg bg-white p-6 shadow-md border border-gray-300">
       {/* Title */}
-      <h2 className="mb-4 text-sm font-medium text-gray-500">
+      <h2 className="mb-4 text-[20px] font-medium text-gray-500">
         Contextual Risk
       </h2>
 
       {/* Risk Levels */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between">
         <RiskLevelsComponent />
 
         {/* Circle Indicator */}

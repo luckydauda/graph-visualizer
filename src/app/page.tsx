@@ -1,9 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
-import SideBar from "@/components/ui/sidebar";
-import Description from "@/components/ui/description";
-import Home from "@/components/ui/home";
+import SideBar from "@/components/Sidebar/sidebar";
+import Description from "@/components/Description/description";
+import Home from "@/components/Layout/home";
+import ImageWithDefaults from "@/components/ui/ImageWithDefaults";
+
+
 
 export default function HomePage() {
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
@@ -19,7 +22,7 @@ export default function HomePage() {
           className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center md:hidden"
           onClick={toggleMobileSidebar}
         >
-          <img src="/hamburger-icon.svg" alt="Menu" />
+          <ImageWithDefaults src="/hamburger-icon.svg" alt="Menu"/>
         </button>
 
         {/* Sidebar for Mobile and Desktop */}

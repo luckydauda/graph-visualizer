@@ -11,7 +11,7 @@ const RiskLevelsComponent = () => {
 
   return (
     <div>
-      <h2 className="text-lg font-semibold mb-4">Risk Levels</h2>
+      
       <ul className="space-y-4">
         {riskLevels.map((level) => (
           <RiskItem key={level.id} level={level} />

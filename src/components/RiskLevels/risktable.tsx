@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import ImageWithDefaults from "../ui/ImageWithDefaults";
 
 const RiskTable = () => {
   const data = [
@@ -19,24 +20,24 @@ const RiskTable = () => {
   ];
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-4 w-full ">
-      <table className="w-full table-auto border-collapse">
+    <div className="bg-white rounded-lg shadow-md p-4 w-full border border-gray-300">
+      <table className="w-full table-auto border-collapse ">
         <thead>
           <tr>
-            <td className="text-left text-gray-300 text-[15px] font-400 px-4 py-2">
+            <td className="text-left text-gray-400 text-base font-400 px-4 py-2">
               Asset
             </td>
-            <td className="text-left text-gray-300 text-[15px] font-400 px-4 py-2">
+            <td className="text-left text-gray-400 text-base font-400 px-4 py-2">
               Contextual Risk
             </td>
           </tr>
-          <tr className="border-b" />
+          <tr className="border-b border-gray-300" />
         </thead>
         <tbody>
           {data.map((item) => (
-            <tr key={item.id} className="border-b">
+            <tr key={item.id} className="border-b border-gray-300">
               <td className="flex items-center space-x-3 px-4 py-2">
-             <img src="./server-icon.svg" />
+             <ImageWithDefaults src="./server-icon.svg" width={60} height={60} alt="servier icon"/>
                 <div>
                 <p className="text-sm font-medium text-gray-500 sm:text-xs">
   {item.name}
@@ -54,12 +55,12 @@ const RiskTable = () => {
         </tbody>
       </table>
       <div className="flex items-center justify-center text-sm text-gray-500 mt-4 px-4 gap-5">
-        <img src="./right.svg"/>
+        <ImageWithDefaults src="./right.svg" width={20} height={20} alt="risk"/>
         <p>
           Showing <span className="font-medium">1-2</span> of{" "}
           <span className="font-medium">2</span>
         </p>
-        <img src="./left.svg"/>
+        <ImageWithDefaults src="./left.svg" width={20} height={20} alt="risk"/>
       </div>
     </div>
   );

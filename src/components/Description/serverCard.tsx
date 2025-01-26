@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import ImageWithDefaults from "../ui/ImageWithDefaults";
+
+
 
 interface ServerCardProps {
   title: string;
@@ -19,7 +22,7 @@ const ServerCard: React.FC<ServerCardProps> = ({
 
   return (
     <div
-      className="bg-white rounded-[20px] shadow p-4 cursor-pointer hover:shadow-md transition-shadow"
+      className="bg-white rounded-mid shadow p-4 cursor-pointer border border-text-mediumgray  hover:shadow-md transition-shadow"
       onClick={handleCardClick}
     >
       {/* Card Header */}
@@ -28,10 +31,10 @@ const ServerCard: React.FC<ServerCardProps> = ({
         {/* Icon and Label */}
         <div className="flex items-center gap-4 ">
           <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-            <img src="/server-icon.svg" alt="Server Icon"  />
+            <ImageWithDefaults src="/server-icon.svg" alt="Server Icon" width={80} height={80}/>
           </div>
           <div>
-            <p className="text-[12px] font-medium text-softgray">Server</p>
+            <p className="text-[14px] font-medium text-softgray">Server</p>
             <p className="text-[10px] text-gray-500">Server</p>
           </div>
         </div>
@@ -39,8 +42,8 @@ const ServerCard: React.FC<ServerCardProps> = ({
          <div className="w-px h-15 bg-hline mx-4"></div>
        
         <div className="flex flex-col gap-1">
-        <div className="text-[13px] font-500 text-gray-500">{title}</div>
-        <div className="text-[13px] font-500 text-gray-500">{subDescription}</div>
+        <div className="text-[14px] font-500 text-gray-500">{title}</div>
+        <div className="text-[14px] font-500 text-gray-500">{subDescription}</div>
         </div>
        
       </div>
