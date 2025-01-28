@@ -18,7 +18,7 @@ export default function PopoverNode2() {
       width={60}
       height={60}
     />
-    <p className="text-lg font-medium text-gray-700 sm:text-sm">
+    <p className="md:text-lg font-medium text-gray-700 sm:text-sm">
       Loremipsu
     </p>
   </div>
@@ -36,7 +36,7 @@ export default function PopoverNode2() {
   {/* Text and IP Address Section */}
   <div className="flex items-center space-x-2">
     {/* Text */}
-    <p className="text-l font-semibold text-gray-600">
+    <p className="md:text-l sm:text-[10px] font-semibold text-gray-600">
       <span className="font-semibold">Lorem:</span> Loremipsum Loremipsum
     </p>
 

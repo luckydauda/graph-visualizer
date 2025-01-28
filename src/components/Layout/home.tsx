@@ -6,10 +6,14 @@ export default function Home() {
   return (
     <main className="flex-1 p-sectionPadding md:p-sectionPaddingMd">
       {/* Top Row */}
-      <div className="flex flex-col gap-gapLarge rounded-section bg-sectionBg shadow-section p-sectionPadding md:p-sectionPaddingMd">
-        <h2 className="mb-2 text-header font-semibold text-headerlarge">
-          Lorem Lorem Loremh
-        </h2>
+      <div className="flex flex-col gap-gapLarge rounded-section bg-sectionBg shadow-section p-0 sm:p-sectionPadding md:p-sectionPaddingMd">
+
+      <h2 className="mx-[30px] my-[15px] text-center text-header font-semibold md:mt-0 sm:mt-4 sm:text-[15px] md:text-headerlarge">
+  Lorem Lorem Loremh
+</h2>
+
+
+
 
         {/* Graph Section */}
         <div className="w-full flex-1 rounded-card bg-graphBg ">
@@ -17,10 +21,10 @@ export default function Home() {
         </div>
 
         {/* Contextual Risk and Table */}
-        <h2 className="mb-2 text-header font-semibold text-headerlarge">
+        <h2 className="mx-[30px] my-[10px] text-center text-header font-semibold md:mt-0 sm:mt-4 sm:text-[15px] md:text-headerlarge">
           Lorem ipsum dolor sit
         </h2>
-        <div className="flex flex-col gap-gapLarge md:flex-row">
+        <div className="flex flex-col gap-gapLarge p-[0_10px] md:p-0 md:flex-row">
           {/* Contextual Risk Table */}
           <section className="w-full md:flex-1">
             <RiskTable />

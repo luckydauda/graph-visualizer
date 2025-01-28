@@ -68,9 +68,14 @@ const CustomNode = ({ data }: any) => {
             height={45}
             // className="sm:w-6 sm:h-6"
           />
-          <p className="text-[10px] text-lightgray sm:text-xs">{data.label}</p>
+<p className="font-400 text-lightgray text-[13px] md:font-medium break-words whitespace-normal">
+  {data.label}
+</p>
+
+
+
           {data.ip && (
-            <p className="text-center text-[10px] text-ipline sm:text-[10px] md:text-[10px]">
+            <p className="md:text-center md:font-medium sw:font-300 sw:text-left text-ipline text-[10px] sm:text-[10px] md:text-[10px]">
               {data.ip}
             </p>
           )}
@@ -145,7 +150,7 @@ const useGraphStore = create<GraphState>((set) => ({
       id: "4",
       position: { x: 650, y: 100 },
       data: {
-        label: "Loremipsumdolorsit",
+        label: "Loremiorsit",
         icon: "/node-icon-active.svg",
         ip: "192.168.1.1",
         type: "alert",
@@ -159,7 +164,7 @@ const useGraphStore = create<GraphState>((set) => ({
       id: "5",
       position: { x: 650, y: 200 },
       data: {
-        label: "Loremipsumdolorsit002",
+        label: "Loremipsuit002",
         icon: "/node-icon-active.svg",
         ip: "192.168.1.2",
         type: "alert",
@@ -217,7 +222,8 @@ export default function CustomGraph() {
 
 
   return (
-    <div className="h-[380px] flex-col flex w-full rounded bg-graph sm:mx-auto sm:w-[90%] sm:p-4 md:w-full md:p-8">
+    <div className="h-[380px] flex-col flex w-full rounded bg-white md:bg-graph sm:mx-auto sm:w-[90%] sm:p-4 md:w-full md:p-8">
+
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -229,13 +235,14 @@ export default function CustomGraph() {
         zoomOnDoubleClick={false} // Disable zoom on double-click
         zoomOnPinch={false} // Disable pinch-to-zoom
         fitView
+        onInit={(instance) => instance.fitView()}
         proOptions={{ hideAttribution: true }} // Hides the trademark text
       >
         {/* Background and Controls are commented out */}
       </ReactFlow>
 
       {/* Legend Section */}
-      <div className="md:mt-0 flex flex-col gap-4 sm:mt-[-100px]">
+      <div  className="m-[10px] md:mt-0 flex flex-col gap-4 sm:mt-[-100px]">
         <div className="w-full border-b border-gray-300" />
         <div className="flex flex-wrap items-center gap-4 space-x-0 rounded-lg sm:flex-nowrap sm:space-x-6">
           {/* Red Item */}
