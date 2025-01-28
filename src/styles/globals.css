@@ -64,3 +64,57 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+
+
+.react-flow__pane {
+  z-index: 1;
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+  .react-flow__pane {
+      margin-left: 0; /* Reset margin for desktop */
+      
+  }
+  .react-flow__container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    
+}
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .react-flow__pane {
+      z-index: 1;
+     
+      
+  }
+  .react-flow__container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 10px !important;
+}
+}
+
+.w-sidebarCollapsed {
+  width: 80px; /* Collapsed width */
+}
+
+.w-sidebarExpanded {
+  width: 250px; /* Expanded width */
+}
+
+/* Hide text smoothly when collapsed */
+.aside.collapsed p {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease-in-out, width 0.3s ease-in-out;
+}

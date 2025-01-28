@@ -13,16 +13,16 @@ export default function PopoverNode3() {
          height={60}
         />
         <div>
-          <p className="text-base font-semibold text-gray-500 sm:text-sm">
+          <p className="md:text-base font-semibold text-gray-500 sm:text-[10px]">
             Loremipsumdolorsit002
           </p>
-          <p className="text-sm text-gray-500 sm:text-xs">192.168.1.2</p>
+          <p className="md:text-sm text-gray-500 sm:text-[8px]">192.168.1.2</p>
         </div>
       </div>
 
       {/* Content Section */}
       <div className="mb-4">
-        <p className="text-sm font-medium text-gray-600 sm:text-xs flex items-center gap-2">
+        <p className="md:text-sm font-medium text-gray-600 sm:text-[10px] flex items-center gap-2">
         <ImageWithDefaults src="/receipt.svg" alt="File Icon" className="w-5 h-5" width={60}
       height={60}/>
 
@@ -33,7 +33,7 @@ export default function PopoverNode3() {
 
       {/* Address Section */}
       <div className="space-y-2">
-        <p className="text-lg text-gray-500 font-medium sm:text-base flex items-center gap-2">
+        <p className="md:text-lg text-gray-500 font-medium sm:text-[10px] flex items-center gap-2">
           Loremipsum{" "}
           <span className="bg-popoverlightblue text-popoverlightbluetext px-2 py-2 rounded-md  text-xs sm:text-[14px]">
           lorem 1234,5678
