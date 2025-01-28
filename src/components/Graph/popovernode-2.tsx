@@ -35,35 +35,37 @@ export default function PopoverNode2() {
 
   {/* Text and IP Address Section */}
   <div className="flex items-center space-x-2">
-    {/* Text */}
-    <p className="md:text-l sm:text-[10px] font-semibold text-gray-600">
-      <span className="font-semibold">Lorem:</span> Loremipsum Loremipsum
-    </p>
+  {/* Text */}
+  <p className="text-[12px] md:text-base font-semibold text-gray-600">
+    <span className="font-semibold">Lorem:</span> Loremipsum Loremipsum
+  </p>
 
-    {/* Highlighted IP Address */}
-    <div className="px-3 py-1 text-sm font-medium text-purple-600 bg-purple-100 rounded-lg">
-      1.2.3.4
-    </div>
+  {/* Highlighted IP Address */}
+  <div className="px-3 py-1 text-sm font-medium text-purple-600 bg-purple-100 rounded-lg">
+    1.2.3.4
   </div>
+</div>
 </div>
 
 
   {/* Address Section */}
   <div className="flex items-center space-x-2">
-      {gridData.map((item) => (
-        <div key={item.id}>
-          {item.type === "ip" ? (
-            <div className="px-3 py-1 text-sm font-medium text-purple-600 bg-purple-100 rounded-lg">
-              {item.content}
-            </div>
-          ) : (
-            <div className="flex items-center space-x-2">
-              <span className="text-gray-700 font-medium">{item.content}</span>
-            </div>
-          )}
+  {gridData.map((item) => (
+    <div key={item.id}>
+      {item.type === "ip" ? (
+        <div className="px-3 py-1 text-sm font-medium text-purple-600 bg-purple-100 rounded-lg">
+          {item.content}
         </div>
-      ))}
+      ) : (
+        <div className="flex items-center space-x-2">
+          <span className="text-[12px] md:text-base text-gray-700 font-medium">
+            {item.content}
+          </span>
+        </div>
+      )}
     </div>
+  ))}
+</div>
 </div>
     )
 

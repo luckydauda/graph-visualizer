@@ -11,7 +11,7 @@ export default function PopoverNode1() {
       </div>
 
       {/* Grid of IP Addresses */}
-      <div className="grid grid-cols-3 gap-2 px-12 sm:px-4">
+      <div className="grid grid-cols-3 gap-2 px-0 md:px-12 sm:px-0 md:px-4">
         {gridData.map((item, index) => (
           <div
             key={index}

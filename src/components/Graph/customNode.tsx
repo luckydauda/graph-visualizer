@@ -150,7 +150,7 @@ const useGraphStore = create<GraphState>((set) => ({
       id: "4",
       position: { x: 650, y: 100 },
       data: {
-        label: "Loremiorsit",
+        label: "Loremio001",
         icon: "/node-icon-active.svg",
         ip: "192.168.1.1",
         type: "alert",
@@ -164,7 +164,7 @@ const useGraphStore = create<GraphState>((set) => ({
       id: "5",
       position: { x: 650, y: 200 },
       data: {
-        label: "Loremipsuit002",
+        label: "Loremuit002",
         icon: "/node-icon-active.svg",
         ip: "192.168.1.2",
         type: "alert",
