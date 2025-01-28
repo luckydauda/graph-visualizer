@@ -14,7 +14,7 @@ export default function SideBar() {
     >
       {/* Top Section */}
       <div>
-        {/* Logo */}
+        {/* Logo and Close Button */}
         <div className="mb-8 flex items-center justify-between">
           <div className="flex flex-row items-center gap-2 pl-2.5">
             {!isCollapsed && (
@@ -25,6 +25,14 @@ export default function SideBar() {
           {isCollapsed && (
             <ImageWithDefaults src="/aestelia.svg" width={30} height={30} alt="image" />
           )}
+          {/* Close Button (Visible on Mobile) */}
+          <button
+            onClick={toggleCollapse}
+            className="md:hidden h-8 w-8 flex items-center justify-center rounded-full text-2xl text-gray-600 hover:text-black"
+          >
+            × {/* Close icon as text */}
+          </button>
+          {/* Collapse Button (Visible on Desktop) */}
           <button
             onClick={toggleCollapse}
             className="hidden md:flex h-8 w-8 items-center justify-center rounded-full"
